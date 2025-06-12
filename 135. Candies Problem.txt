@@ -1,0 +1,28 @@
+Candy Distribution Problem - Code Explanation
+
+Problem:
+You are given a list of ratings representing the performance of children standing in a line. Each child must receive at least one candy. Children with a higher rating than their immediate neighbors must get more candies. The goal is to calculate the minimum number of candies required to distribute under these conditions.
+
+Approach:
+The solution uses a greedy strategy with two passes over the list of ratings.
+
+Initialize a list called candies with all elements set to 1. This ensures that each child gets at least one candy.
+
+Forward pass (left to right):
+
+Iterate from the second child to the end.
+
+If the current child's rating is higher than the previous child's rating, assign the current child one more candy than the previous child.
+
+Backward pass (right to left):
+
+Iterate from the second-to-last child to the beginning.
+
+If the current child's rating is higher than the next child's rating, assign the current child the maximum of their current candy count or one more than the next child's candy count.
+
+Finally, return the sum of the candies list, which represents the minimum total number of candies required.
+
+Time Complexity: O(n) where n is the number of children.
+Space Complexity: O(n) for storing the candies list.
+
+This approach ensures all the conditions are met efficiently and accurately.
